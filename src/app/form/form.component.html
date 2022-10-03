@@ -1,0 +1,69 @@
+<mat-card class="form-card">
+  <mat-toolbar class="form-heading">
+    <span>PERSON ADDRESS FORM</span>
+    <span class="item-spacer"></span>
+    <button mat-icon-button routerLink="/dashboard" aria-label="form cancel and back to dashboard">
+      <mat-icon class="cancel-icon-btn">cancel</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <div class="form-div">
+    <form class="form-tag">
+      <div class="input-div">
+        <mat-label class="input-label">Full Name</mat-label><br>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput class="input-box" placeholder="Enter Name" [(ngModel)]="contact.fullName" [ngModelOptions]="{standalone:true}" ngDefaultControl name="fullName">
+        </mat-form-field>
+      </div>
+      <div class="input-div">
+        <mat-label class="input-label">Phone Number</mat-label><br>
+        <mat-form-field class="input-field" appearance="outline">
+          <input matInput placeholder="Enter Phone Number" [(ngModel)]="contact.phoneNumber" [ngModelOptions]="{standalone:true}"  ngDefaultControl name="phoneNumber">
+        </mat-form-field>
+      </div>
+
+      <div class="input-div">
+        <mat-label class="input-label"> Address </mat-label><br>
+        <mat-form-field class="input-field" appearance="outline">
+          <textarea matInput placeholder="Enter Address" [(ngModel)]="contact.address" [ngModelOptions]="{standalone:true}" ngDefaultControl name="address"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="selectors-div">
+        <div class="city-div">
+          <mat-label class="input-label"> City </mat-label><br>
+            <mat-form-field class="city-select-input-field" appearance="outline">
+              <mat-select placeholder="Select City" [(ngModel)]="contact.city" name="city" [ngModelOptions]="{standalone:true}" ngDefaultControl>
+                <mat-option *ngFor="let City of Cities" [value]="City.value">
+                  {{City.value}}
+                </mat-option>
+              </mat-select>
+          </mat-form-field>
+        </div>
+          <div class="state-label-input-box">
+            <mat-label class="input-label"> State </mat-label><br>
+            <mat-form-field class="state-select-input-field" appearance="outline">
+                <mat-select placeholder="Select State" name="state" [(ngModel)]="contact.state" [ngModelOptions]="{standalone:true}" ngDefaultControl>
+                  <mat-option  *ngFor="let State of States" [value]="State.value" >
+                    {{State.viewValue}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="zip-label-input-box">
+            <mat-label class="input-label">Zip Code</mat-label><br>
+            <mat-form-field class="" appearance="outline">
+              <input matInput placeholder="Enter Zip Code" [(ngModel)]="contact.zip" [ngModelOptions]="{standalone:true}" name="zip" ngDefaultControl>
+            </mat-form-field>
+          </div>
+      </div>
+        <div class="btns-container">
+          <button mat-button class="reset-contact-btn"  type="reset">Reset</button>
+          <button mat-button class="add-contact-btn" type="submit"  *ngIf="this.Id==null" (click)="onSubmit()">Add</button>
+          <button mat-button class="add-contact-btn" type="submit"  *ngIf="this.Id!=null" (click)="updateContactByIdOnly()">Update</button>
+        </div>
+    </form>
+  </div>
+</mat-card>
+

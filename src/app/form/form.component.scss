@@ -1,0 +1,99 @@
+.form-card {
+  margin: 1% 2% 2% 19%;
+  height: fit-content;
+  width: 60%;
+}
+.form-heading {
+  padding-left: 30%;
+  color: white;
+  background-color: #008cff;
+  border-radius: 5px;
+}
+.cancel-icon {
+  color: red;
+  background-color: black;
+  border-style: dashed;
+}
+
+.item-spacer {
+  flex: 1 1 auto;
+}
+.cancel-icon-btn{
+  background-color: #008cff;
+  border-radius: 20px;
+}
+.cancel-icon-btn:hover{
+  color: rgb(238, 16, 16);
+  background-color: white;
+}
+.form-div {
+  margin: 6% 0% 0% 7%;
+}
+
+.input-label {
+  text-align: left;
+  color: #42515f;
+  font: normal normal normal 18px/24px Roboto;
+  opacity: 100;
+}
+.input-field {
+  width: 96%;
+}
+.selectors-div {
+  display: flex;
+  height: 100px;
+  width: 95%;
+  // border-style:dashed ;
+}
+
+.city-select-input-field{
+  width: 96%;
+  height: 57% ;
+  margin-right: 30px;
+}
+
+.state-select-input-field{
+  width: 95%;
+  height: 57%;
+  margin-right: 38px;
+}
+
+.btns-container {
+  height: 40px;
+  width: 420px;
+  margin: 0% 0% 0% 36%;
+  display: inline-block;
+}
+
+.reset-contact-btn{
+  height: 100%;
+  width: 45%;
+  margin-left: 7%;
+  color: white;
+  background-color: #008cff;
+  border-radius: 10px;
+}
+.reset-contact-btn:hover{
+  background-color: rgb(235, 133, 50);
+}
+
+.add-contact-btn{
+  height: 100%;
+  width: 45%;
+  margin-left: 10px;
+  color: white;
+  background-color: #008cff;
+  border-radius: 10px;
+}
+.add-contact-btn:hover{
+  background-color: rgb(56, 175, 56);
+}
+
+/* To change the input caret color */
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color:#BDBDBD;
+}
+/* To change mat form field border color on focus */
+:host ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline {
+  color:#BDBDBD;
+}

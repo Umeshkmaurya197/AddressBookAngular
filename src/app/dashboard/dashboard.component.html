@@ -1,0 +1,63 @@
+<div class="main-content">
+  <div class="header-div">
+      <div class="heading-div">
+        <span class="heading-text" >Person Details </span>
+        <span class="contact-count">{{this.contactCount}}</span>
+        <button mat-button routerLink="/form" class="add-btn"><mat-icon>person_add</mat-icon> &nbsp;Add Person</button>
+      </div>
+  </div>
+  <mat-card class="card-div">
+    <table class="table">
+      <tr>
+          <th>ID</th>
+          <th>FULL NAME</th>
+          <th>ADDRESS</th>
+          <th>CITY</th>
+          <th>STATE</th>
+          <th>ZIP CODE</th>
+          <th>PHONE NUMBER</th>
+          <th>Action</th>
+      </tr>
+      <tr *ngFor="let con of contactList">
+        <td>{{ con.contactId }}</td>
+        <td>{{ con.fullName }}</td>
+        <td>{{ con.address }}</td>
+        <td>{{ con.city }}</td>
+        <td>{{ con.state }}</td>
+        <td>{{ con.zip }}</td>
+        <td>{{ con.phoneNumber }}</td>
+        <td>
+           <mat-icon class="action-edit-icn" (click)="onEdit(con.contactId)">edit</mat-icon>
+           <mat-icon class="action-delete-icn"(click)="deleteContactByIdOnly(con.contactId)">delete_forever</mat-icon>
+        </td>
+      </tr>
+    </table>
+  </mat-card>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- <tr >
+        <td>1</td>
+        <td>Omi</td>
+        <td>BCM</td>
+        <td>Balrampur</td>
+        <td>UP</td>
+        <td>122345</td>
+        <td>9823873498</td>
+        <td>
+          <mat-icon class="action-edit-icn" (click)="onEdit()">edit</mat-icon>
+          <mat-icon class="action-delete-icn" >delete_forever</mat-icon>
+        </td>
+      </tr> -->
